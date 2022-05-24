@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.yourname.mod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'mod'
+group = 'com.omicron.spectral_edge' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'spectral_edge'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 

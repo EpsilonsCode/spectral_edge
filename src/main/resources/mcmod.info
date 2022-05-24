@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "spectral_edge",
+  "name": "Spectral Edge",
+  "description": "Damage modifier enchantment.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Omicron"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
