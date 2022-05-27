@@ -1,15 +1,16 @@
 package com.omicron.spectral_edge;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentDamage;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class SpectralEdge extends EnchantmentDamage {
 
@@ -42,7 +43,19 @@ public class SpectralEdge extends EnchantmentDamage {
 
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)
     {
-        return 0;
+        EntityPlayerSP user = Minecraft.getMinecraft().player;
+        AtomicReference<Float> damage = new AtomicReference<>((float) 0);
+            user.getHeldItemMainhand().getAttributeModifiers(EntityEquipmentSlot.MAINHAND).forEach((string, attribute) -> {
+                if(attribute.getID().equals(ATTACK_DAMAGE_MODIFIER))
+                {
+                    float essa =((float) (attribute.getAmount() + 1));
+                    System.out.println(user.getHeldItemMainhand() + " " + essa);
+                    damage.set((essa / 100) * Config.spectralEdgePercentileDamageModifier * level);
+                }
+            });
+            //entitylivingbase.setHealth();
+
+        return damage.get();
     }
 
     public String getName()
@@ -60,6 +73,7 @@ public class SpectralEdge extends EnchantmentDamage {
         return stack.getItem() instanceof ItemAxe ? true : super.canApply(stack);
     }
 
+    /*
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
         if (target instanceof EntityLivingBase)
@@ -76,5 +90,7 @@ public class SpectralEdge extends EnchantmentDamage {
             //entitylivingbase.setHealth();
         }
     }
+
+     */
 
 }

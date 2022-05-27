@@ -1,0 +1,7 @@
+{
+  "compabilityLevel": "JAVA_8",
+  "package": "com.omicron.spectral_edge.mixin",
+  "mixins" : [
+
+  ]
+}
