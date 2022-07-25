@@ -23,7 +23,7 @@ public class SpectralEdgeMod
     public void preInit(FMLPreInitializationEvent event)
     {
         // some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
+        //System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
         ModEnchantments.init();
         File directory = event.getModConfigurationDirectory();
         config = new Configuration(new File(directory.getPath(), "spectral_edge.cfg"));
@@ -34,14 +34,14 @@ public class SpectralEdgeMod
     public void init(FMLInitializationEvent event)
     {
         // some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
+        //System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
         // some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
+        //System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
         if (config.hasChanged()) {
             config.save();
         }

@@ -4,10 +4,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentDamage;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
@@ -41,6 +44,7 @@ public class SpectralEdge extends EnchantmentDamage {
         return 5;
     }
 
+    /*
     public float calcDamageByCreature(int level, EnumCreatureAttribute creatureType)
     {
         EntityPlayerSP user = Minecraft.getMinecraft().player;
@@ -57,6 +61,8 @@ public class SpectralEdge extends EnchantmentDamage {
 
         return damage.get();
     }
+    zzzzzzzzzzzzzzzzzzzzz
+     */
 
     public String getName()
     {
@@ -73,7 +79,7 @@ public class SpectralEdge extends EnchantmentDamage {
         return stack.getItem() instanceof ItemAxe ? true : super.canApply(stack);
     }
 
-    /*
+
     public void onEntityDamaged(EntityLivingBase user, Entity target, int level)
     {
         if (target instanceof EntityLivingBase)
@@ -84,13 +90,14 @@ public class SpectralEdge extends EnchantmentDamage {
                 if(attribute.getID().equals(ATTACK_DAMAGE_MODIFIER))
                 {
                     double damage = 1 + attribute.getAmount();
-                    entitylivingbase.setHealth((float) (entitylivingbase.getHealth() - (damage / 100) * Config.spectralEdgePercentileDamageModifier * level));
+                    entitylivingbase.hurtResistantTime = 0;
+                    entitylivingbase.attackEntityFrom(DamageSource.causeMobDamage(user), (float) (entitylivingbase.getHealth() - (damage / 100) * Config.spectralEdgePercentileDamageModifier * level));
                 }
             });
             //entitylivingbase.setHealth();
         }
     }
 
-     */
+
 
 }
