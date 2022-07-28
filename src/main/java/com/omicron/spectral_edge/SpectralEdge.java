@@ -91,7 +91,7 @@ public class SpectralEdge extends EnchantmentDamage {
                 {
                     double damage = 1 + attribute.getAmount();
                     entitylivingbase.hurtResistantTime = 0;
-                    entitylivingbase.attackEntityFrom(DamageSource.causeMobDamage(user), (float) (entitylivingbase.getHealth() - (damage / 100) * Config.spectralEdgePercentileDamageModifier * level));
+                    entitylivingbase.attackEntityFrom(DamageSource.causeMobDamage(user), (float) ((damage / 100) * Config.spectralEdgePercentileDamageModifier * level));
                 }
             });
             //entitylivingbase.setHealth();
