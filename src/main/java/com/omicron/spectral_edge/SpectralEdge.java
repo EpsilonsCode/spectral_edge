@@ -1,19 +1,15 @@
 package com.omicron.spectral_edge;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentDamage;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class SpectralEdge extends EnchantmentDamage {
 
@@ -97,7 +93,4 @@ public class SpectralEdge extends EnchantmentDamage {
             //entitylivingbase.setHealth();
         }
     }
-
-
-
 }
